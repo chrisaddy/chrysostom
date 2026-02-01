@@ -1,0 +1,16 @@
+{
+  "name": "chrysostom",
+  "version": "0.1.0",
+  "description": "An Orthodox exploration game set in Constantinople during the time of St. John Chrysostom",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
