@@ -5,10 +5,6 @@ edition = "2024"
 description = "An Orthodox exploration game - Constantinople in the time of St. John Chrysostom"
 repository = "https://github.com/chrisaddy/chrysostom"
 
-[[bin]]
-name = "chrysostom"
-path = "rust-src/main.rs"
-
 [dependencies]
 bevy = "0.15"
 
@@ -18,3 +14,9 @@ opt-level = 1
 
 [profile.dev.package."*"]
 opt-level = 3
+
+# WASM release profile
+[profile.wasm-release]
+inherits = "release"
+opt-level = "z"
+lto = "thin"
