@@ -1,6 +1,8 @@
-[build]
-builder = "dockerfile"
-
 [deploy]
 healthcheckPath = "/"
 restartPolicyType = "ON_FAILURE"
+
+# NOTE: Configure Railway to use GHCR image in dashboard:
+# 1. Create service → Docker Image
+# 2. Set image: ghcr.io/chrisaddy/chrysostom:latest
+# 3. This pulls from GitHub Actions instead of building on Railway
