@@ -2,6 +2,8 @@
 
 Welcome, artist. This folder contains everything you need to create visual assets for Constantinople: A Chrysostom Story.
 
+**Engine:** Rust / Bevy (was Phaser.js — now Rust-native with WASM support)
+
 ---
 
 ## Start Here
@@ -21,7 +23,7 @@ Welcome, artist. This folder contains everything you need to create visual asset
    - Exact dimensions for every asset type
    - Sprite sheet layouts
    - Animation frame counts
-   - Phaser loading code
+   - Bevy loading code
 
 4. **[ART_TOOLS.md](ART_TOOLS.md)** — How to create the art
    - Aseprite setup and workflow
@@ -32,7 +34,7 @@ Welcome, artist. This folder contains everything you need to create visual asset
 5. **[TILED_SETUP.md](TILED_SETUP.md)** — Map creation
    - Tiled configuration
    - Layer structure
-   - Phaser integration
+   - Bevy integration
    - Sample map layout
 
 ---
@@ -41,8 +43,8 @@ Welcome, artist. This folder contains everything you need to create visual asset
 
 | Asset Type | Dimensions | Format |
 |------------|------------|--------|
-| Character sprites | 16×24 px | PNG-24 |
-| Tiles | 16×16 px | PNG-24 |
+| Character sprites | 32×32 px | PNG-24 |
+| Tiles | 32×32 px | PNG-24 |
 | Portraits | 128×192 px | PNG-24 |
 | UI Icons | 16×16 px | PNG-24 |
 
@@ -71,8 +73,8 @@ Not a "Christian video game" — an Orthodox experience that stands on its own a
 1. Read ART_STYLE_GUIDE.md thoroughly
 2. Install Aseprite (or LibreSprite)
 3. Set up the color palette
-4. Create a test 16×16 tile
-5. Create a test 16×24 character
+4. Create a test 32×32 tile
+5. Create a test 32×32 character
 6. Export, test in-game
 7. Pick an asset from ASSET_LIST.md
 8. Make it real

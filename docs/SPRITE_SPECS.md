@@ -1,6 +1,8 @@
 # Sprite Sheet Specifications ☦️
 
-Technical specifications for all sprite sheets. Follow these exactly for proper Phaser.js integration.
+Technical specifications for all sprite sheets. Follow these exactly for proper Bevy integration.
+
+> **Note:** We use 32×32 sprites (up from 16×16) for better detail while still fitting the pixel art aesthetic.
 
 ---
 
@@ -67,31 +69,47 @@ Technical specifications for all sprite sheets. Follow these exactly for proper 
          96 × 192 pixels total
 ```
 
-### Phaser Loading
+### Bevy Loading
 
-```javascript
-// In BootScene.preload()
-this.load.spritesheet('player', 'assets/sprites/player.png', {
-  frameWidth: 16,
-  frameHeight: 24
-});
+```rust
+// In asset loading system
+fn load_player_sprites(
+    mut commands: Commands,
+    asset_server: Res<AssetServer>,
+    mut texture_atlases: ResMut<Assets<TextureAtlasLayout>>,
+) {
+    let texture = asset_server.load("sprites/player.png");
+    let layout = TextureAtlasLayout::from_grid(
+        UVec2::new(32, 32),  // sprite size
+        6,                    // columns
+        8,                    // rows
+        None,                 // padding
+        None,                 // offset
+    );
+    let texture_atlas_layout = texture_atlases.add(layout);
+    
+    commands.spawn((
+        SpriteBundle {
+            texture,
+            ..default()
+        },
+        TextureAtlas {
+            layout: texture_atlas_layout,
+            index: 0,
+        },
+        Player,
+    ));
+}
 
-// Animation definitions
-this.anims.create({
-  key: 'player_idle_down',
-  frames: this.anims.generateFrameNumbers('player', { start: 0, end: 1 }),
-  frameRate: 2,
-  repeat: -1
-});
+// Animation component
+#[derive(Component)]
+struct AnimationIndices {
+    first: usize,
+    last: usize,
+}
 
-this.anims.create({
-  key: 'player_walk_down',
-  frames: this.anims.generateFrameNumbers('player', { start: 6, end: 11 }),
-  frameRate: 10,
-  repeat: -1
-});
-
-// ... etc for other directions
+#[derive(Component, Deref, DerefMut)]
+struct AnimationTimer(Timer);
 ```
 
 ### Design Notes
@@ -272,17 +290,41 @@ This tileset is designed for **Tiled Map Editor**. Export settings:
 5. **Lighting:** Dramatic, high contrast (single light source feel)
 6. **Detail level:** More than sprites, still stylized
 
-### Phaser Loading
+### Bevy Loading
 
-```javascript
-this.load.spritesheet('portrait_chrysostom', 'assets/portraits/chrysostom.png', {
-  frameWidth: 128,
-  frameHeight: 192
-});
+```rust
+// Load portrait as texture atlas
+fn load_portraits(
+    mut commands: Commands,
+    asset_server: Res<AssetServer>,
+    mut texture_atlases: ResMut<Assets<TextureAtlasLayout>>,
+) {
+    let texture = asset_server.load("portraits/chrysostom.png");
+    let layout = TextureAtlasLayout::from_grid(
+        UVec2::new(128, 192),  // portrait size
+        4,                      // 4 expressions
+        1,                      // 1 row
+        None,
+        None,
+    );
+    let atlas_layout = texture_atlases.add(layout);
+    
+    // Store for later use in dialogue system
+    commands.insert_resource(PortraitAtlas {
+        texture,
+        layout: atlas_layout,
+    });
+}
 
-// Usage
-this.portrait = this.add.sprite(x, y, 'portrait_chrysostom', 0); // Neutral
-this.portrait.setFrame(1); // Kind
+// Usage in dialogue
+fn show_portrait(
+    portrait_atlas: Res<PortraitAtlas>,
+    mut query: Query<&mut TextureAtlas, With<Portrait>>,
+) {
+    for mut atlas in &mut query {
+        atlas.index = 1; // Kind expression
+    }
+}
 ```
 
 ---
@@ -428,7 +470,7 @@ Before submitting any sprite sheet:
 - [ ] Proper transparency (no white backgrounds)
 - [ ] Consistent style (matches existing assets)
 - [ ] Correct frame count and layout
-- [ ] Tests in Phaser (loads and animates correctly)
+- [ ] Tests in Bevy (loads and animates correctly)
 
 ---
 
