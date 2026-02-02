@@ -1,9 +1,11 @@
 # Stage 1: Build WASM
-FROM rust:1.83 as builder
+FROM rust:1.83 AS builder
 
-# Install wasm target and wasm-bindgen
+# Install wasm target
 RUN rustup target add wasm32-unknown-unknown
-RUN cargo install wasm-bindgen-cli
+
+# Install wasm-bindgen-cli (specify version to avoid build issues)
+RUN cargo install wasm-bindgen-cli --version 0.2.95
 
 WORKDIR /app
 COPY . .
