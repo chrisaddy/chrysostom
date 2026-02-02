@@ -52,7 +52,8 @@ export class ExplorationScene extends Phaser.Scene {
     // Input
     this.cursors = this.input.keyboard.createCursorKeys();
     this.interactKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    this.interactKey.on('down', () => this.tryInteract());
+    this.enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+    this.interactPressed = false;
     
     // Touch/click to move (for mobile)
     this.input.on('pointerdown', (pointer) => {
@@ -188,6 +189,15 @@ export class ExplorationScene extends Phaser.Scene {
     
     // Check proximity to NPCs
     this.checkNPCProximity();
+    
+    // Check for interaction (polling for reliability)
+    const interactDown = this.interactKey.isDown || this.enterKey.isDown;
+    if (interactDown && !this.interactPressed) {
+      this.interactPressed = true;
+      this.tryInteract();
+    } else if (!interactDown) {
+      this.interactPressed = false;
+    }
   }
 
   checkNPCProximity() {
