@@ -15,3 +15,9 @@ dist/
 *.swo
 .idea/
 .vscode/
+
+# Flox environment
+.flox/
+
+# Vite cache
+.vite/
