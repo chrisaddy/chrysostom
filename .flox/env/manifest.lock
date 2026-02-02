@@ -1,0 +1,136 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "cargo": {
+        "pkg-path": "cargo"
+      }
+    },
+    "hook": {},
+    "profile": {},
+    "options": {}
+  },
+  "packages": [
+    {
+      "attr_path": "cargo",
+      "broken": false,
+      "derivation": "/nix/store/smqakq8ly0wv3q2jvhvcihx2qd4bmi9i-cargo-1.92.0.drv",
+      "description": "Downloads your Rust project's dependencies and builds your project",
+      "install_id": "cargo",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=bfc1b8a4574108ceef22f02bafcf6611380c100d",
+      "name": "cargo-1.92.0",
+      "pname": "cargo",
+      "rev": "bfc1b8a4574108ceef22f02bafcf6611380c100d",
+      "rev_count": 935279,
+      "rev_date": "2026-01-26T21:10:04Z",
+      "scrape_date": "2026-01-29T04:35:22.920189Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.92.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/v4bvnkm0p5x41fhybskr0cf2zvkgyrvv-cargo-1.92.0"
+      },
+      "system": "aarch64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "cargo",
+      "broken": false,
+      "derivation": "/nix/store/y2jp95g3j7vprw96lllsxliklvxh4icv-cargo-1.92.0.drv",
+      "description": "Downloads your Rust project's dependencies and builds your project",
+      "install_id": "cargo",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=bfc1b8a4574108ceef22f02bafcf6611380c100d",
+      "name": "cargo-1.92.0",
+      "pname": "cargo",
+      "rev": "bfc1b8a4574108ceef22f02bafcf6611380c100d",
+      "rev_count": 935279,
+      "rev_date": "2026-01-26T21:10:04Z",
+      "scrape_date": "2026-01-29T05:05:10.225856Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.92.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/piiqs6x2m8gv0n3z3pys8scn0y673piy-cargo-1.92.0"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "cargo",
+      "broken": false,
+      "derivation": "/nix/store/60bc9hzhvc4bl212dnj4450y58hwmaaw-cargo-1.92.0.drv",
+      "description": "Downloads your Rust project's dependencies and builds your project",
+      "install_id": "cargo",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=bfc1b8a4574108ceef22f02bafcf6611380c100d",
+      "name": "cargo-1.92.0",
+      "pname": "cargo",
+      "rev": "bfc1b8a4574108ceef22f02bafcf6611380c100d",
+      "rev_count": 935279,
+      "rev_date": "2026-01-26T21:10:04Z",
+      "scrape_date": "2026-01-29T05:33:07.802847Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.92.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/wf6279pgydd1nny4s5nx1msian6dbf9p-cargo-1.92.0"
+      },
+      "system": "x86_64-darwin",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "cargo",
+      "broken": false,
+      "derivation": "/nix/store/3gdr50smf0vcnv3v8slv9v3dd4splibj-cargo-1.92.0.drv",
+      "description": "Downloads your Rust project's dependencies and builds your project",
+      "install_id": "cargo",
+      "license": "[ MIT, Apache-2.0 ]",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=bfc1b8a4574108ceef22f02bafcf6611380c100d",
+      "name": "cargo-1.92.0",
+      "pname": "cargo",
+      "rev": "bfc1b8a4574108ceef22f02bafcf6611380c100d",
+      "rev_count": 935279,
+      "rev_date": "2026-01-26T21:10:04Z",
+      "scrape_date": "2026-01-29T06:06:21.293634Z",
+      "stabilities": [
+        "staging",
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "1.92.0",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/yqcsaywfvcyy9wmbzb5fawp29icgi7cb-cargo-1.92.0"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}

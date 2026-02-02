@@ -1,4 +1,17 @@
+# Rust build artifacts
+/target
+
+# Node.js dependencies
 node_modules/
+
+# Vite build output
 dist/
+
+# OS files
 .DS_Store
-*.log
+
+# Editor files
+*.swp
+*.swo
+.idea/
+.vscode/
