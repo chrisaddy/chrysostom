@@ -1,0 +1,135 @@
+{
+  "id": "widows_bread",
+  "title": "The Widow's Bread",
+  "description": "Bring bread from the diaconia to Maria of Chalcedon and her children",
+  "giver": "chrysostom",
+  "type": "main",
+  "chapter": 1,
+  
+  "prerequisites": {
+    "dialogue": "chrysostom_intro",
+    "choice": "accept_mission"
+  },
+  
+  "objectives": [
+    {
+      "id": "visit_diaconia",
+      "type": "talk",
+      "target": "deacon_stephanos",
+      "location": "diaconia",
+      "description": "Speak with Deacon Stephanos at the diaconia near the forum",
+      "completed": false
+    },
+    {
+      "id": "receive_bread",
+      "type": "receive_item",
+      "item": "bread_for_widow",
+      "description": "Receive bread for Maria",
+      "completed": false,
+      "dependsOn": "visit_diaconia"
+    },
+    {
+      "id": "find_maria",
+      "type": "talk",
+      "target": "maria",
+      "location": "eastern_quarter",
+      "description": "Find Maria of Chalcedon in the eastern quarter",
+      "completed": false,
+      "dependsOn": "receive_bread"
+    },
+    {
+      "id": "deliver_bread",
+      "type": "give_item",
+      "item": "bread_for_widow",
+      "target": "maria",
+      "description": "Give the bread to Maria",
+      "completed": false,
+      "dependsOn": "find_maria"
+    },
+    {
+      "id": "return_chrysostom",
+      "type": "talk",
+      "target": "chrysostom",
+      "location": "hagia_sophia",
+      "description": "Return to Chrysostom and tell him about Maria",
+      "completed": false,
+      "dependsOn": "deliver_bread"
+    }
+  ],
+  
+  "rewards": {
+    "items": [
+      {
+        "id": "food_bundle",
+        "name": "Food from the Diaconia",
+        "description": "Bread, cheese, and dried figs"
+      }
+    ],
+    "reputation": {
+      "church": 10,
+      "poor": 15
+    },
+    "unlocks": [
+      "chrysostom_first_mission",
+      "diaconia_work"
+    ],
+    "flags": {
+      "helpedWidow": true,
+      "firstQuestComplete": true
+    }
+  },
+  
+  "journal": {
+    "start": "The Archbishop caught me stealing but didn't turn me in. Instead, he asked me to bring bread to a widow named Maria in the eastern quarter. He says there's food for me too if I do this.",
+    "diaconia": "I spoke with Deacon Stephanos at the diaconia. He gave me bread for Maria and food for myself. He said the Church sees those who serve.",
+    "maria": "I found Maria and her children. They hadn't eaten in days. When her son saw the bread, he cried. I've never felt anything like that before.",
+    "complete": "I told Chrysostom about Maria. He said I became 'the hands of Christ.' I don't know what that means, but... something has changed."
+  },
+  
+  "failConditions": [
+    {
+      "type": "item_stolen",
+      "item": "bread_for_widow",
+      "consequence": "quest_failed_theft",
+      "journal": "I stole the bread meant for the widow. The old patterns are hard to break."
+    }
+  ],
+  
+  "alternativePaths": [
+    {
+      "id": "steal_bread",
+      "trigger": {
+        "type": "use_item",
+        "item": "bread_for_widow",
+        "context": "eat"
+      },
+      "outcome": {
+        "flags": { "stolenWidowsBread": true },
+        "reputation": { "church": -20 },
+        "nextDialogue": "chrysostom_disappointed"
+      }
+    },
+    {
+      "id": "share_bread",
+      "trigger": {
+        "type": "choice",
+        "dialogue": "poor_family",
+        "choice": "share_your_portion"
+      },
+      "outcome": {
+        "flags": { "sharedOwnFood": true },
+        "reputation": { "poor": 5, "church": 5 },
+        "journal": "I shared my own portion with the children. I'm still hungry, but it felt right."
+      }
+    }
+  ],
+  
+  "thematicNotes": {
+    "orthodoxTeaching": "This quest embodies Matthew 25:35 ('I was hungry and you gave me food'). The player experiences being Christ's hands—the Orthodox understanding that we participate in Christ's work through service to others.",
+    "chrysostomQuotes": [
+      "If you cannot find Christ in the beggar at the church door, you will not find Him in the chalice.",
+      "The gold bit is not the only way to give alms; there are many means of almsgiving.",
+      "This is the rule of most perfect Christianity: that we should be concerned for our neighbors as much as for ourselves."
+    ]
+  }
+}

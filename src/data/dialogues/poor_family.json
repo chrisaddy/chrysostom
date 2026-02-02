@@ -1,0 +1,426 @@
+{
+  "id": "poor_family",
+  "title": "The Widow Maria and Her Children",
+  "description": "The family you help in the first mission",
+  "requirements": {
+    "hasItem": "bread_for_widow"
+  },
+  "location": "eastern_quarter",
+  "lines": [
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "(You find the house—if you can call it that. A single room with walls of mud brick, a cloth for a door.)"
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "(Inside, you hear children's voices. One is crying.)"
+    },
+    {
+      "speaker": "Maria",
+      "portrait": "widow",
+      "text": "(A woman appears at the doorway. Her face is gaunt, her eyes hollow, but she holds herself with dignity.)"
+    },
+    {
+      "speaker": "Maria",
+      "portrait": "widow",
+      "text": "Who are you? What do you want?"
+    },
+    {
+      "speaker": "Choices",
+      "choices": [
+        {
+          "text": "The Archbishop sent me. I have bread for you.",
+          "next": "direct_approach"
+        },
+        {
+          "text": "The Church hasn't forgotten you, Maria.",
+          "next": "gentle_approach"
+        },
+        {
+          "text": "I... I have something for you. From St. Sophia.",
+          "next": "humble_approach"
+        }
+      ]
+    }
+  ],
+  "branches": {
+    "direct_approach": [
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(Her eyes widen.) The Archbishop? Chrysostom sent you?"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "He said to tell you the Church remembers you. And that your husband's soul is with Christ."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(She covers her mouth. Tears spill from her eyes.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "I thought... I thought God had forgotten us."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "My husband, Theodoros—he was a good man. He fell loading cargo at the harbor."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "They didn't even pay what they owed him. Said he was dead, so what did it matter?"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You hand her the bread. It's fresh, wrapped in linen.)"
+      },
+      {
+        "speaker": "Child",
+        "portrait": null,
+        "text": "(A small boy, maybe five years old, peers around his mother's legs.)"
+      },
+      {
+        "speaker": "Child",
+        "portrait": null,
+        "text": "Mama... is that bread?"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "Yes, little one. It's bread. We're going to eat today."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(The child starts crying. Not from sadness—from relief.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(To you) What is your name? I will pray for you every day."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "{playerName}. But... I don't need prayers. I'm not—"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "Everyone needs prayers. Even those who don't believe it."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(She takes your hand.) You carried bread. That makes you an angel today."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You don't know what to say. No one has ever called you an angel.)"
+      },
+      {
+        "speaker": "System",
+        "text": "✦ Quest Complete: The Widow's Bread ✦"
+      },
+      {
+        "speaker": "System",
+        "text": "Return to Chrysostom at Hagia Sophia."
+      }
+    ],
+    "gentle_approach": [
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(She stares at you, uncomprehending.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "The Church? But I... I haven't been to Liturgy since Theodoros died. I couldn't leave the children."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "Chrysostom knows. He sent bread for you and the little ones."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(Her hands tremble as she takes the bundle.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "I prayed. Every night, I prayed. I thought no one was listening."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "Someone was."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(Two more children appear—a girl, perhaps seven, holding the hand of a toddler.)"
+      },
+      {
+        "speaker": "Girl",
+        "portrait": null,
+        "text": "Mama, who is that? Are they from Papa's ship?"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "No, Anastasia. They're from the church. They brought us food."
+      },
+      {
+        "speaker": "Girl",
+        "portrait": null,
+        "text": "(She looks at you with eyes too old for her face.)"
+      },
+      {
+        "speaker": "Girl",
+        "portrait": null,
+        "text": "Thank you. I was trying to be brave for Mama, but I was so hungry."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(Your throat tightens. You were going to steal today. Instead, you're here.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "Tell the Archbishop... tell him we will come to Liturgy. As soon as I can walk that far."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "Tell him Maria of Chalcedon will light a candle for him every feast day until she dies."
+      },
+      {
+        "speaker": "System",
+        "text": "✦ Quest Complete: The Widow's Bread ✦"
+      },
+      {
+        "speaker": "System",
+        "text": "Return to Chrysostom at Hagia Sophia."
+      }
+    ],
+    "humble_approach": [
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(She looks at you—really looks.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "You're not from the Church. You're... you're like us, aren't you? Poor."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "I'm... I was a thief. The Archbishop caught me and sent me here instead of to the guards."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(She laughs—a sound like water in a dry land.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "A thief bringing bread. That sounds like something Chrysostom would do."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "He preaches that God loves the sinners most of all. I never understood until now."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You hand her the bread. She holds it like it's made of gold.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "My children haven't eaten in two days. The youngest stopped crying yesterday. That scared me most of all."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You say nothing. What is there to say?)"
+      },
+      {
+        "speaker": "Child",
+        "portrait": null,
+        "text": "(A small boy totters out. He's thin—too thin. When he sees the bread, he makes a sound that isn't quite a word.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "Yes, Petros. Bread. We have bread."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "(To you) You saved my son's life today. You know that?"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "I just... I carried bread."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "No. You carried life. Don't ever forget that."
+      },
+      {
+        "speaker": "System",
+        "text": "✦ Quest Complete: The Widow's Bread ✦"
+      },
+      {
+        "speaker": "System",
+        "text": "Return to Chrysostom at Hagia Sophia."
+      }
+    ]
+  },
+  "returnVisit": {
+    "id": "poor_family_return",
+    "requirements": {
+      "questComplete": "widows_bread"
+    },
+    "lines": [
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "{playerName}! Children, come see—our friend is here!"
+      },
+      {
+        "speaker": "Child",
+        "portrait": null,
+        "text": "(The children run to the door. They look healthier—still thin, but their eyes are brighter.)"
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "The deacon came yesterday. He's helping us find work. And the church brought more food."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "It's because of you. Because you told them about us."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "Chrysostom already knew. I just... I was the messenger."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "The messenger matters. Don't you see? Anyone can know about suffering. Few will do something."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "You did something. You chose to help when you could have walked away."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "That choice—that's what makes us human. That's what Theodoros used to say."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "He sounds like a wise man."
+      },
+      {
+        "speaker": "Maria",
+        "portrait": "widow",
+        "text": "He was. And he would have liked you. He always said God sends help in strange packages."
+      },
+      {
+        "speaker": "Girl",
+        "portrait": null,
+        "text": "(Anastasia tugs your sleeve.) Will you stay for supper? We have lentils now!"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You look at their meager home. They have so little—and they want to share it.)"
+      },
+      {
+        "speaker": "Choices",
+        "choices": [
+          {
+            "text": "I'd be honored.",
+            "next": "stay_for_supper",
+            "flags": { "sharedMealWithFamily": true }
+          },
+          {
+            "text": "I can't stay, but thank you.",
+            "next": "polite_decline"
+          }
+        ]
+      }
+    ],
+    "branches": {
+      "stay_for_supper": [
+        {
+          "speaker": "Maria",
+          "portrait": "widow",
+          "text": "Come in, come in. It's not much, but it's warm."
+        },
+        {
+          "speaker": "You",
+          "portrait": null,
+          "text": "(You share a simple meal of lentils and bread. The children chatter about their days.)"
+        },
+        {
+          "speaker": "You",
+          "portrait": null,
+          "text": "(For a moment, in this poor room with this broken family, you feel something you've never felt.)"
+        },
+        {
+          "speaker": "You",
+          "portrait": null,
+          "text": "(You feel like you belong.)"
+        },
+        {
+          "speaker": "System",
+          "text": "✦ You shared a meal with Maria and her children. ✦"
+        }
+      ],
+      "polite_decline": [
+        {
+          "speaker": "Maria",
+          "portrait": "widow",
+          "text": "Of course. You have your own life to live. But know this—you are always welcome here."
+        },
+        {
+          "speaker": "Maria",
+          "portrait": "widow",
+          "text": "Our door is open to you. Always."
+        },
+        {
+          "speaker": "System",
+          "text": "✦ You left the family in better spirits. ✦"
+        }
+      ]
+    }
+  }
+}

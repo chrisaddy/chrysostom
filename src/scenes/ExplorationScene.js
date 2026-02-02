@@ -12,13 +12,13 @@ export class ExplorationScene extends Phaser.Scene {
     // Create player
     this.player = this.physics.add.sprite(400, 300, 'player');
     this.player.setCollideWorldBounds(true);
-    this.player.setScale(2);
+    this.player.setScale(1.5);  // 32x32 base, scaled to 48x48
     
     // Create Chrysostom NPC near the church
     this.chrysostom = this.physics.add.sprite(500, 200, 'chrysostom');
-    this.chrysostom.setScale(2);
+    this.chrysostom.setScale(1.5);  // Match player scale
     this.chrysostom.setImmovable(true);
-    this.chrysostom.body.setSize(16, 16);
+    this.chrysostom.body.setSize(24, 24);  // Adjusted for 32x32 sprite
     
     // NPC data
     this.chrysostom.setData('name', 'John Chrysostom');
@@ -26,8 +26,18 @@ export class ExplorationScene extends Phaser.Scene {
     
     // Interaction prompt (hidden by default)
     this.interactionPrompt = this.add.sprite(0, 0, 'prompt');
-    this.interactionPrompt.setScale(1.5);
+    this.interactionPrompt.setScale(2);  // Make it visible
     this.interactionPrompt.setVisible(false);
+    
+    // Add floating animation to prompt
+    this.tweens.add({
+      targets: this.interactionPrompt,
+      y: '-=5',
+      duration: 800,
+      yoyo: true,
+      repeat: -1,
+      ease: 'Sine.easeInOut'
+    });
     
     // Set up collisions
     this.physics.add.collider(this.player, this.walls);

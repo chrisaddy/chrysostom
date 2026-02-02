@@ -1,0 +1,265 @@
+{
+  "id": "chrysostom_intro",
+  "title": "The Golden Mouth",
+  "description": "Your first encounter with the Archbishop of Constantinople",
+  "requirements": {
+    "firstEncounter": true
+  },
+  "lines": [
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "You there—I saw what you meant to do."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "A hand reaching for another man's purse. Do you think these old eyes are blind?"
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "(You freeze. The Archbishop himself caught you. Your legs want to run, but something in his gaze holds you.)"
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "Stay. I am not calling the guards."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "I have preached a thousand sermons against thieves—not because I hate them, but because I grieve for them."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "You wear your hunger like a cloak. I know that look. I saw it in Antioch, in the faces of those who had nothing."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "Tell me—what is your name, child?"
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "[Enter your name...]",
+      "input": true,
+      "inputKey": "playerName"
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "{playerName}. Listen to me."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "The gold in that merchant's purse—it would feed you for a day. Perhaps two."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "And then what? Another purse, another day of fear. The wolf that lives by stealing becomes more wolf, less human."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "I have seen men lose their souls one coin at a time. They do not even notice until they are hollow."
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "What would you have me do? Starve virtuously?"
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "Ha! You have spirit. Good—the faith is not for the spiritless."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "No, I would not have you starve. But I would have you live—truly live."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "The Church feeds many in this city. Not with gold stolen from the poor, but with gold freely given by those who remember they will die."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "There is work that needs doing. Work that feeds the soul as well as the body."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "In the eastern quarter, there is a widow—Maria of Chalcedon. Her husband died in the harbor last month."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "She has three children and nothing to feed them. The Church has bread for them, but I cannot go myself today."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "Will you carry it to her? There will be food for you as well—earned, not stolen."
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "(He looks at you as if you are already something more than a thief. It is uncomfortable.)"
+    },
+    {
+      "speaker": "Choices",
+      "choices": [
+        {
+          "text": "I'll do it.",
+          "next": "accept_mission",
+          "flags": { "firstMissionAccepted": true }
+        },
+        {
+          "text": "Why should I trust you?",
+          "next": "trust_question"
+        },
+        {
+          "text": "I work for pay, not promises.",
+          "next": "pay_question"
+        }
+      ]
+    }
+  ],
+  "branches": {
+    "accept_mission": [
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "Good. Go to the diaconia near the forum—ask for Deacon Stephanos. He will give you the bread."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "Tell Maria that the Church remembers her. Tell her that her husband's soul is in the hands of Christ, who conquered death."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "And {playerName}—"
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "When you return, find me. I would hear how she fares."
+      },
+      {
+        "speaker": "System",
+        "text": "✦ Quest Started: The Widow's Bread ✦"
+      },
+      {
+        "speaker": "System",
+        "text": "Go to the diaconia near the forum. Speak with Deacon Stephanos."
+      }
+    ],
+    "trust_question": [
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "Trust me? You should not. You do not know me."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "Trust Christ, who said: 'I was hungry and you gave me food.' Trust the widow who waits for bread."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "I am only an old man who talks too much. They call me 'Golden Mouth,' but gold is soft and words are cheaper still."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "What matters is not my words but what you do with your hands. Will you help her?"
+      },
+      {
+        "speaker": "Choices",
+        "choices": [
+          {
+            "text": "Yes. I'll go.",
+            "next": "accept_mission",
+            "flags": { "firstMissionAccepted": true }
+          },
+          {
+            "text": "Not today.",
+            "next": "decline"
+          }
+        ]
+      }
+    ],
+    "pay_question": [
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "Spoken like someone who has learned that promises are empty."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "Very well. There will be bread for you—good bread, baked this morning. And cheese, if Stephanos has any left."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "But the greater pay, you will find, is not in the eating."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "A rich man once asked me: 'Why should I give to the poor?' I told him: 'Because in giving, you become rich.'"
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "He did not understand. Perhaps you will."
+      },
+      {
+        "speaker": "Choices",
+        "choices": [
+          {
+            "text": "Fine. I'll do it.",
+            "next": "accept_mission",
+            "flags": { "firstMissionAccepted": true }
+          },
+          {
+            "text": "I need to think about it.",
+            "next": "decline"
+          }
+        ]
+      }
+    ],
+    "decline": [
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "I will not force you. God does not force us, and I am less than God."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "But know this: I will be here tomorrow. And the next day. The doors of the Church are always open."
+      },
+      {
+        "speaker": "Chrysostom",
+        "portrait": "chrysostom",
+        "text": "When you are ready—if you are ever ready—come find me."
+      },
+      {
+        "speaker": "System",
+        "text": "✦ You can speak to Chrysostom again when you're ready. ✦"
+      }
+    ]
+  }
+}

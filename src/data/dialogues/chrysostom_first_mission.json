@@ -1,0 +1,143 @@
+{
+  "id": "chrysostom_first_mission",
+  "title": "After the First Mission",
+  "description": "Chrysostom's response when you return from helping the widow",
+  "requirements": {
+    "questComplete": "widows_bread"
+  },
+  "lines": [
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "You returned. Tell me—how is Maria? How are her children?"
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "They ate. The youngest cried when he saw the bread. He thought it was a dream."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "(His eyes glisten. He turns away for a moment.)"
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "That child's tears—they are worth more than all the gold in the imperial treasury."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "Do you know what you did today, {playerName}? You became the hands of Christ."
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "I carried bread. Anyone could have done it."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "Yes. Anyone could have. And yet, most do not."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "The Empress has servants who could feed a thousand widows. She does not send them."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "The senators have wealth that could empty every beggar's bowl in Constantinople. Their gold stays in their coffers."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "But you—a thief, a stranger, someone with nothing—you carried bread."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "This is the scandal of the Gospel. The last shall be first."
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "You speak as if I did something great. I was hungry. You promised me food."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "And was the bread good?"
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "...Yes. It was good."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "But I think something else was better. When that child wept—what did you feel?"
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "(You are silent. You don't have words for it.)"
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "That feeling—that is the beginning of everything."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "The philosophers call it compassion. We call it love. But it is more than a word."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "It is the image of God in you, waking up."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "Now. There is more work to be done, if you are willing."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "The market quarter is full of merchants who cheat the poor. They use false weights, they hoard grain to drive up prices."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "I cannot go there myself—when I preach against the rich, they smile and wait for me to leave."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "But you... you could watch. Listen. Tell me what you see."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "There is a merchant named Kyriakos who sells grain near the eastern stalls. I have heard troubling things."
+    },
+    {
+      "speaker": "Chrysostom",
+      "portrait": "chrysostom",
+      "text": "Go. See for yourself. Come back and tell me the truth."
+    },
+    {
+      "speaker": "System",
+      "text": "✦ Quest Started: The False Measure ✦"
+    },
+    {
+      "speaker": "System",
+      "text": "Investigate the merchant Kyriakos in the market quarter."
+    }
+  ]
+}

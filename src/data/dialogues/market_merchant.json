@@ -1,0 +1,282 @@
+{
+  "id": "market_merchant",
+  "title": "Kyriakos the Grain Merchant",
+  "description": "A wealthy merchant who cheats the poor with false weights",
+  "lines": [
+    {
+      "speaker": "Kyriakos",
+      "portrait": "merchant",
+      "text": "You! What do you want? If you're not buying, move along. This is a place of business."
+    },
+    {
+      "speaker": "You",
+      "portrait": null,
+      "text": "(The merchant is well-fed, his clothes fine. Behind him, sacks of grain are stacked high.)"
+    },
+    {
+      "speaker": "Choices",
+      "choices": [
+        {
+          "text": "I want to buy grain.",
+          "next": "buy_grain"
+        },
+        {
+          "text": "I'm just looking.",
+          "next": "just_looking"
+        },
+        {
+          "text": "That's a lot of grain. Prices must be good.",
+          "next": "prices_question"
+        }
+      ]
+    }
+  ],
+  "branches": {
+    "buy_grain": [
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Buying? Well, that's different. You don't look like you have much coin, but everyone eats."
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "One follis gets you this much. (He scoops grain into a small measure.)"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You watch carefully. The scoop he uses seems... lighter than it should be.)"
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Fair price for fair grain. Best wheat from Egypt."
+      },
+      {
+        "speaker": "Choices",
+        "choices": [
+          {
+            "text": "That scoop looks small.",
+            "next": "confront_scoop",
+            "flags": { "observedFalseWeights": true }
+          },
+          {
+            "text": "I'll take it.",
+            "next": "take_grain"
+          },
+          {
+            "text": "I changed my mind.",
+            "next": "leave"
+          }
+        ]
+      }
+    ],
+    "confront_scoop": [
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "What? This is a standard measure! Approved by the city."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "I've seen standard measures before. This one has a false bottom."
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "(His face flushes red.) You dare accuse me? Who are you?"
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "I know your type. Thieves who can't steal, so they shake down honest men."
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Get out of here before I call the guard!"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You've seen enough. Chrysostom was right about this man.)"
+      },
+      {
+        "speaker": "System",
+        "text": "✦ You observed the merchant's false weights. Return to Chrysostom. ✦"
+      }
+    ],
+    "just_looking": [
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Looking costs nothing. Buying costs coin. When you have some, come back."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(He turns to another customer—an old woman counting worn coins in her palm.)"
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "(To the woman) Ah, grandmother. Same as last week? That'll be four folles."
+      },
+      {
+        "speaker": "Old Woman",
+        "portrait": null,
+        "text": "Four? It was three last week!"
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Prices change. Ships from Egypt were delayed. Supply and demand, grandmother."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You see sacks of grain stacked ten deep behind him. There's no shortage here.)"
+      },
+      {
+        "speaker": "Old Woman",
+        "portrait": null,
+        "text": "(She pays, but her hands shake. This was probably her only money.)"
+      },
+      {
+        "speaker": "System",
+        "text": "✦ You witnessed the merchant's price gouging. ✦",
+        "flags": { "witnessedGouging": true }
+      },
+      {
+        "speaker": "Choices",
+        "choices": [
+          {
+            "text": "Actually, I want to buy grain.",
+            "next": "buy_grain"
+          },
+          {
+            "text": "I've seen enough.",
+            "next": "leave"
+          }
+        ]
+      }
+    ],
+    "prices_question": [
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Good? Ha. With the taxes the Emperor demands? I barely scrape by."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(His rings say otherwise. That's Tyrian purple on his belt.)"
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Everyone thinks merchants are rich. We're the ones who take all the risk."
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Ships sink. Grain rots. Thieves—(he looks at you)—steal."
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "If prices seem high, blame the world, not me."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(Chrysostom's words echo: 'They hoard grain to drive up prices.')"
+      },
+      {
+        "speaker": "System",
+        "text": "✦ You noticed the merchant's self-justification. ✦"
+      },
+      {
+        "speaker": "Choices",
+        "choices": [
+          {
+            "text": "I want to buy grain.",
+            "next": "buy_grain"
+          },
+          {
+            "text": "I'll look around.",
+            "next": "just_looking"
+          }
+        ]
+      }
+    ],
+    "take_grain": [
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "Pleasure doing business. Next!"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(The grain is good, but there's less than there should be.)"
+      },
+      {
+        "speaker": "System",
+        "text": "You received grain—but not a full measure."
+      }
+    ],
+    "leave": [
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You step away from the stall. Kyriakos has already forgotten you.)"
+      }
+    ]
+  },
+  "followUp": {
+    "id": "market_merchant_return",
+    "requirements": {
+      "flags": ["observedFalseWeights", "witnessedGouging"]
+    },
+    "lines": [
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "You again? I told you to leave!"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "I'm leaving. But you might want to think about who's watching."
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "(He pales slightly.) What do you mean by that?"
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "The Archbishop has eyes everywhere. Just something to consider."
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "(He laughs, but it's hollow.) Chrysostom? He preaches. That's all he does."
+      },
+      {
+        "speaker": "Kyriakos",
+        "portrait": "merchant",
+        "text": "The Empress protects men of business. We're the spine of the Empire."
+      },
+      {
+        "speaker": "You",
+        "portrait": null,
+        "text": "(You leave him to his certainty. But you wonder how long it will last.)"
+      }
+    ]
+  }
+}
