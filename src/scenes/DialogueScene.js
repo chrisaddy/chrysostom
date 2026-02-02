@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { PortraitRenderer } from '../portraits/PortraitRenderer.js';
+import { VirtualGamepad } from '../input/VirtualGamepad.js';
 
 // Import dialogue data
 import chrysostomIntro from '../data/dialogues/chrysostom_intro.json';
@@ -137,6 +138,50 @@ export class DialogueScene extends Phaser.Scene {
     this.input.keyboard.on('keydown-TWO', () => this.selectChoice(1));
     this.input.keyboard.on('keydown-THREE', () => this.selectChoice(2));
     this.input.keyboard.on('keydown-FOUR', () => this.selectChoice(3));
+    
+    // Virtual gamepad for mobile
+    this.gamepad = new VirtualGamepad(this);
+    this.gamepad.onButtonDown = (btn) => this.onVirtualButton(btn);
+    
+    // Track selected choice for d-pad navigation
+    this.selectedChoiceIndex = 0;
+  }
+  
+  onVirtualButton(btn) {
+    if (btn === 'a') {
+      // A = confirm / advance
+      if (this.choiceButtons.length > 0) {
+        this.selectChoice(this.selectedChoiceIndex);
+      } else {
+        this.advance();
+      }
+    } else if (btn === 'b') {
+      // B = skip text animation
+      this.advance();
+    } else if (btn === 'up' || btn === 'down') {
+      // Navigate choices with d-pad
+      if (this.choiceButtons.length > 0) {
+        this.navigateChoices(btn === 'up' ? -1 : 1);
+      }
+    }
+  }
+  
+  navigateChoices(direction) {
+    // Remove highlight from current
+    if (this.choiceButtons[this.selectedChoiceIndex]) {
+      this.choiceButtons[this.selectedChoiceIndex].bg.setFillStyle(0x1a1a1a);
+    }
+    
+    // Update index
+    this.selectedChoiceIndex += direction;
+    if (this.selectedChoiceIndex < 0) this.selectedChoiceIndex = this.choiceButtons.length - 1;
+    if (this.selectedChoiceIndex >= this.choiceButtons.length) this.selectedChoiceIndex = 0;
+    
+    // Highlight new selection
+    if (this.choiceButtons[this.selectedChoiceIndex]) {
+      this.choiceButtons[this.selectedChoiceIndex].bg.setFillStyle(0x2a2a2a);
+      this.choiceButtons[this.selectedChoiceIndex].bg.setStrokeStyle(2, 0xd4af37);
+    }
   }
 
   loadDialogue(key) {
@@ -361,6 +406,13 @@ export class DialogueScene extends Phaser.Scene {
       this.choiceContainer.add([bg, text]);
       this.choiceButtons.push({ bg, text, choice });
     });
+    
+    // Highlight first choice for d-pad navigation
+    this.selectedChoiceIndex = 0;
+    if (this.choiceButtons.length > 0) {
+      this.choiceButtons[0].bg.setFillStyle(0x2a2a2a);
+      this.choiceButtons[0].bg.setStrokeStyle(2, 0xd4af37);
+    }
   }
 
   checkRequirements(requirements) {
@@ -409,6 +461,7 @@ export class DialogueScene extends Phaser.Scene {
   clearChoices() {
     this.choiceContainer.removeAll(true);
     this.choiceButtons = [];
+    this.selectedChoiceIndex = 0;
     this.continuePrompt.setVisible(true);
   }
 

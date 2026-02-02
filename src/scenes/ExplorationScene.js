@@ -1,11 +1,17 @@
 import Phaser from 'phaser';
+import { VirtualGamepad } from '../input/VirtualGamepad.js';
 
 export class ExplorationScene extends Phaser.Scene {
   constructor() {
     super({ key: 'ExplorationScene' });
+    this.gamepad = null;
   }
 
   create() {
+    // Create virtual gamepad for mobile
+    this.gamepad = new VirtualGamepad(this);
+    this.gamepad.onButtonDown = (btn) => this.onVirtualButton(btn);
+
     // Create a simple map (will be replaced with Tiled maps later)
     this.createMap();
     
@@ -73,6 +79,21 @@ export class ExplorationScene extends Phaser.Scene {
 
     // Track nearby NPCs
     this.nearbyNPC = null;
+    
+    // Update UI hint for mobile
+    this.updateControlHints();
+  }
+  
+  updateControlHints() {
+    const isMobile = ('ontouchstart' in window) || window.innerWidth <= 900;
+    // UI text is created in create(), we just update based on device
+  }
+  
+  onVirtualButton(btn) {
+    if (btn === 'a') {
+      this.tryInteract();
+    }
+    // B button reserved for menu/back in future
   }
 
   createMap() {
@@ -145,17 +166,23 @@ export class ExplorationScene extends Phaser.Scene {
     let vy = 0;
     
     // Keyboard movement
-    if (this.cursors.left.isDown || this.input.keyboard.addKey('A').isDown) {
-      vx = -speed;
-    } else if (this.cursors.right.isDown || this.input.keyboard.addKey('D').isDown) {
-      vx = speed;
-    }
+    const kbLeft = this.cursors.left.isDown || this.input.keyboard.addKey('A').isDown;
+    const kbRight = this.cursors.right.isDown || this.input.keyboard.addKey('D').isDown;
+    const kbUp = this.cursors.up.isDown || this.input.keyboard.addKey('W').isDown;
+    const kbDown = this.cursors.down.isDown || this.input.keyboard.addKey('S').isDown;
     
-    if (this.cursors.up.isDown || this.input.keyboard.addKey('W').isDown) {
-      vy = -speed;
-    } else if (this.cursors.down.isDown || this.input.keyboard.addKey('S').isDown) {
-      vy = speed;
-    }
+    // Virtual gamepad movement
+    const gpLeft = this.gamepad?.isDown('left');
+    const gpRight = this.gamepad?.isDown('right');
+    const gpUp = this.gamepad?.isDown('up');
+    const gpDown = this.gamepad?.isDown('down');
+    
+    // Combine inputs
+    if (kbLeft || gpLeft) vx = -speed;
+    else if (kbRight || gpRight) vx = speed;
+    
+    if (kbUp || gpUp) vy = -speed;
+    else if (kbDown || gpDown) vy = speed;
     
     this.player.setVelocity(vx, vy);
     
