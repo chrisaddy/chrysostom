@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "serve dist -l $PORT"
+    "start": "npx serve dist"
   },
   "dependencies": {
     "phaser": "^3.80.1",
